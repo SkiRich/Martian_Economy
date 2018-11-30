@@ -6,14 +6,5 @@
 #### Added
 - git related files
 - ignore_files to metadata
-#### Removed
-
-#### Fixed Issues
-
-#### Open Issues
-
-#### Deprecated
-
-#### Todo
 
 --------------------------------------------------------

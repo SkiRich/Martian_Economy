@@ -1,4 +1,12 @@
--- ========== THIS IS AN AUTOMATICALLY GENERATED FILE! ==========
+-- Code developed for Martian Economy
+-- Author @EagleScout93 and @SkiRich
+-- All rights reserved, duplication and modification prohibited.
+-- But you may not copy it, package it, or claim it as your own.
+-- Created Nov 30th, 2018
+-- Updated Nov 30th, 2018
+
+
+
 
 local PlaceWealthButton = function(wealth_level, wealth_type)
   local IdName = "idWealthButton"..tostring(wealth_level)  -- skirichs code to add

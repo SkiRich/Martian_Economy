@@ -1,15 +1,15 @@
 return {
 PlaceObj('ModItemCode', {
+	'name', "ME_1_UI_Templates",
+	'FileName', "Code/ME_1_UI_Templates.lua",
+}),
+PlaceObj('ModItemCode', {
 	'name', "ColonistEconomy",
 	'FileName', "Code/ColonistEconomy.lua",
 }),
 PlaceObj('ModItemCode', {
 	'name', "DomeEconomy",
 	'FileName', "Code/DomeEconomy.lua",
-}),
-PlaceObj('ModItemCode', {
-	'name', "EconomyUI",
-	'FileName', "Code/EconomyUI.lua",
 }),
 PlaceObj('ModItemCode', {
 	'name', "MarEcon_1Init",

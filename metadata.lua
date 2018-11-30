@@ -12,7 +12,7 @@ return PlaceObj('ModDef', {
 	'author', "Obersturmbannführer Todesengel",
 	'version', 68,
 	'lua_revision', 237920,
-	'code', {"Code/ColonistEconomy.lua","Code/DomeEconomy.lua","Code/EconomyUI.lua","Code/MarEcon_1Init.lua","Code/ResidenceEconomy.lua","Code/InflationEconomy.lua","Code/ServiceEconomy.lua","Code/SmarterMigrationAI.lua","Code/SmarterWorkerAI.lua","Code/WorkplaceEconomy.lua"},
+	'code', {"Code/ME_1_UI_Templates.lua","Code/ColonistEconomy.lua","Code/DomeEconomy.lua","Code/MarEcon_1Init.lua","Code/ResidenceEconomy.lua","Code/InflationEconomy.lua","Code/ServiceEconomy.lua","Code/SmarterMigrationAI.lua","Code/SmarterWorkerAI.lua","Code/WorkplaceEconomy.lua"},
 	'saved', 1543431343,
 	'screenshot1', "Images/preview_wealth_system.png",
 	'screenshot2', "Images/preview_martian_economy_morale.png",

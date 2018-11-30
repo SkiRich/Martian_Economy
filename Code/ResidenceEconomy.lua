@@ -1,4 +1,10 @@
--- ========== THIS IS AN AUTOMATICALLY GENERATED FILE! ==========
+-- Code developed for Martian Economy
+-- Author @EagleScout93 and @SkiRich
+-- All rights reserved, duplication and modification prohibited.
+-- But you may not copy it, package it, or claim it as your own.
+-- Created Nov 30th, 2018
+-- Updated Nov 30th, 2018
+
 
 function NewChooseResidence(unit)
   local is_child = unit.traits.Child
@@ -9,12 +15,12 @@ function NewChooseResidence(unit)
   for i = 1, #buildings do
     local home = buildings[i]
     local is_children_only = home.children_only
-    
+
     -- Fail-safe
     if home.rents_level == nil then home.rents_level = 0 end
     if unit.workplace and unit.workplace.wages_level == nil then unit.workplace.wages_level = 0 end
     --
-    
+
     if ((unit.workplace and unit.workplace.wages_level >= home.rents_level) or home.rents_level == 0) and IsValid(home) and not home.destroyed and not home.demolishing and home.parent_dome == unit.dome and home:GetFreeSpace() > 0 and (not is_children_only or is_children_only and is_child) then
       local score = home.service_comfort
       if is_child and is_children_only then

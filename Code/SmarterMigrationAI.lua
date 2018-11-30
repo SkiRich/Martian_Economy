@@ -1,4 +1,10 @@
--- ========== THIS IS AN AUTOMATICALLY GENERATED FILE! ==========
+-- Code developed for Martian Economy
+-- Author @EagleScout93 and @SkiRich
+-- All rights reserved, duplication and modification prohibited.
+-- But you may not copy it, package it, or claim it as your own.
+-- Created Nov 30th, 2018
+-- Updated Nov 30th, 2018
+
 
 -- Emigration
 function Workplace:GetFreeSlots()
@@ -104,15 +110,15 @@ local FilterDomeWorkplaces = function(dome, unit, only_specs)
     for _, workplace in ipairs(unit.city.labels.Workplace or empty_table) do
       local parent_dome = workplace.parent_dome
 	  if workplace.allow_all_workers == nil then workplace.allow_all_workers = true end
-      if (workplace.specialist == specialist or not only_specs) 
-      and (workplace.specialist == specialist or workplace.allow_all_workers) 
-      and not workplace.destroyed 
-      and not workplace.demolishing 
-      and (parent_dome == dome or not parent_dome and dome_dist >= HexAxialDistance(workplace, dome)) 
-      and workplace.ui_working 
+      if (workplace.specialist == specialist or not only_specs)
+      and (workplace.specialist == specialist or workplace.allow_all_workers)
+      and not workplace.destroyed
+      and not workplace.demolishing
+      and (parent_dome == dome or not parent_dome and dome_dist >= HexAxialDistance(workplace, dome))
+      and workplace.ui_working
       and workplace.max_workers > 0
-      and workplace ~= avoid_workplace 
-      and (workplace:GetFreeSlots() > 0 or workplace.specialist == specialist and workplace:GetWorkerToKick(unit, false)) 
+      and workplace ~= avoid_workplace
+      and (workplace:GetFreeSlots() > 0 or workplace.specialist == specialist and workplace:GetWorkerToKick(unit, false))
       then
         dome_workplaces = dome_workplaces or {}
         dome_workplaces[#dome_workplaces + 1] = workplace
@@ -164,68 +170,68 @@ function SmartFindEmigrationDome(colonist)
 	local start_idx = colonist:Random(count_domes)
 	for i = 1, count_domes do
 		local idx = start_idx + i
-		if idx>count_domes then 
+		if idx>count_domes then
 			idx = idx - count_domes
-		end	
+		end
 		local dome = domes[idx]
-		
+
 		if my_dome ~= dome and not dome.destroyed and not dome.demolishing
 			and dome.accept_colonists and not dome.overpopulated and dome.ui_working
-			and dome:HasPower() and dome:HasWater() and dome:HasAir() 
+			and dome:HasPower() and dome:HasWater() and dome:HasAir()
 		then
 			-- dome to dome dist is cached, thus IsInWalkingDist is fast
 			local new_is_walking, new_dist = IsInWalkingDistDome(dome, pos)
 			if new_is_walking or LR_transport_available then
         local new_eval = TraitFilterColonist(dome.traits_filter, traits)
         local free_living_space, free_living_space_adult = dome:GetFreeLivingSpace(true), dome:GetFreeLivingSpace(false)
-        
+
         if new_eval >= 0 and eval <= new_eval then
           new_spec_workplaces = FilterDomeWorkplaces(dome, colonist, true) --GetFreeWorkplacesAround(dome) > 0
           new_nonspec_workplaces = FilterDomeWorkplaces(dome, colonist, false)
         end
-        
-        local specialist_going_to_specialization = 
-          colonist:CanWork() and 
+
+        local specialist_going_to_specialization =
+          colonist:CanWork() and
           (
-            (IsValid(colonist.workplace) and not colonist.user_forced_workplace and 
+            (IsValid(colonist.workplace) and not colonist.user_forced_workplace and
             colonist.workplace.specialist ~= colonist.specialist and not spec_workplaces and new_spec_workplaces)
             or
-            (not IsValid(colonist.workplace) and not spec_workplaces and new_spec_workplaces) 
+            (not IsValid(colonist.workplace) and not spec_workplaces and new_spec_workplaces)
           )
-        
+
         if new_eval >= 0 and eval <= new_eval and (
           specialist_going_to_specialization
           or
-          ( 
+          (
             (
               (colonist:IsHomeless() and not (false and colonist.workplace and colonist.specialist == colonist.workplace.specialist))
-              or 
+              or
               (is_unemployed and not (spec_workplaces or non_spec_workplaces) and (new_spec_workplaces or new_nonspec_workplaces))
-            )             
-            and 
-            (is_child and free_living_space > 0 or not is_child and free_living_space_adult > 0) 
+            )
+            and
+            (is_child and free_living_space > 0 or not is_child and free_living_space_adult > 0)
           )
           or
           (not colonist:CanWork() and eval < new_eval and (is_child and free_living_space > 0 or not is_child and free_living_space_adult > 0))
-        ) then       
+        ) then
           if specialist_going_to_specialization then
             local kicked_out_worker
             local new_workplace = ChooseWorkplace(colonist, dome.labels.Workplaces, false)
-            if new_workplace then 
+            if new_workplace then
               for i_shift = 1, 3 do
                 for _, worker in ipairs(new_workplace.workers[i_shift]) do
                   if worker.residence and new_workplace:IsPreferredWorker(colonist, worker) then
-                    kicked_out_worker = worker 
+                    kicked_out_worker = worker
                   end
                 end
               end
               local residence_to_take = kicked_out_worker and kicked_out_worker.residence
-              
+
               if kicked_out_worker and residence_to_take then
                 kicked_out_worker:SetResidence(false)
                 residence_to_take:ReserveResidence(colonist)
               end
-              
+
               if residence_to_take or free_living_space_adult > 0 then
                 choosen = dome
                 eval = new_eval
@@ -245,6 +251,6 @@ function SmartFindEmigrationDome(colonist)
   end --for i = 1, count_domes do
   return choosen, is_walking, dist
 end
-	
+
 VanillaFindEmigrationDome = Colonist.FindEmigrationDome
 Colonist.FindEmigrationDome = SmartFindEmigrationDome
