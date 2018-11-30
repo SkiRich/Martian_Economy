@@ -1,5 +1,3 @@
--- ========== THIS IS AN AUTOMATICALLY GENERATED FILE! ==========
-
 local mod_name = "Martian Economy"
 local steam_id = "1575009362"
 
