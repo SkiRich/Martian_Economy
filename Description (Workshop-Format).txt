@@ -1,0 +1,34 @@
+Welcome to the New & Improved Martian Economy! Your colonists are now paid an hourly wage, of which they can now satisfy their needs using their hard earned money. Every 10 Sols, the price of imports increases by 5%. Can you handle the competition? We've revitalised the Martian Economy, good luck in your quest to bring peace and prosperity to your thriving Mars Settlement!
+
+[h1] Powerful management tool [/h1]
+Martian Economy gives you [b] intuitive, elegant [/b] and [b] effective [/b] tools to [b] fine-tune [/b] your colony!
+Have you ever wanted to restrict your Arcologies, Electronic Shops or Smart Homes to your most precious workers? Or maybe ban the non-specialists from them? 
+Martian Economy lets you do [b] just that! [/b] And it's really [b] simple [/b]!
+
+[h1] Wages, rents & prices [/h1]
+With this mod your all workplaces have [b] Wage Level [/b], while Residences have [b] Rents Level [/b] and Service buildings have [b] Prices Level[/b].
+
+Colonists will only use buildings with Prices / Rents [b] lower [/b] or [b] equal [/b] to their Wages.
+
+Unemployed, seniors and children will [b] only use [/b] Level 1 buildings.
+
+Also, all workers get a modifier to their [b] Comfort [/b] and [b] Morale [/b] when paid. It's [b] +/- 2 [/b] per level of difference between their Wage Level and the Dome average. So a high pay means happy and effective workers. Bad pay - the opposite.
+
+[h1] Tips & tricks [/h1]
+- Unemployed taking your [b] Smart Homes [/b]? Increase the Rent Level to 2 and watch them go away!
+- Too few [b] Machine Parts [/b]? Increase the wages of factory workers and roll in them!
+- Too many [b] Renegades [/b]? Need loyal security officers? Pay them good and watch their Morale raise!
+
+[h1] Smart Workers [/h1]
+Specialists will [b] only [/b] work outside of their respective field if there are [b] no [/b] free slots in the dome for their specialization. Then and only then will they look for work elsewhere. Simple as that and much more effective than the default workers!
+
+[h1] Smart Migration [/h1] 
+Specialists not working in their profession will migrate as soon as there will be an open slot in workplace of their specialization in any nearby dome. They will also migrate if they find a workplace matching their specialization where non-specialists work.
+
+[h1] Cases for Migration [/h1]
+- Specialist going to specialized work - a specialist has found out that he can migrate to a dome where he would be a better worker than some non-specialist in a specialized workplace. Non-specialist is kicked out from this workplace in result. He also gives his residence to the specialist.
+- Homeless going to a dome, which has residence.
+- Unemployed going to a dome, which has BOTH work & residence.
+- Children and not-working seniors migrating according to the filters - these groups are controlled only by the filter and residence availability.
+
+[b] For all these cases domes' filters have to be at least equal. [/b]
