@@ -1,4 +1,11 @@
--- ========== THIS IS AN AUTOMATICALLY GENERATED FILE! ==========
+-- Code developed for Martian Economy
+-- Author @EagleScout93 and @SkiRich
+-- All rights reserved, duplication and modification prohibited.
+-- But you may not copy it, package it, or claim it as your own.
+-- Created Nov 30th, 2018
+-- Updated Nov 30th, 2018
+
+
 
 -- Add the field to the colonist summary where age/specialization/dome/etc are.
 local function AddWagesToColonistView()
