@@ -1,5 +1,5 @@
 return PlaceObj('ModDef', {
-	'title', "Improved Martian Economy (2.3.x)",
+	'title', "Improved Martian Economy",
 	'image', "Images/kisspng-economy-economics-economic-growth-computer-icons-e-economic-5abf23f51eba88.9945682615224760211259.png",
 	'last_changes', "v.0.3 Released\n----------------------------------------------------------------------------------------------------------------------------------------\n\n-- Importing goods now accounts for a 5% inflation rate every 10 Sols.\n-- Workers will no longer leave their current employment if they are qualified to work there. Workers will also seek out jobs that they are qualified for, if there are no qualified jobs available, specialists will choose to work in a different field.",
 	'ignore_files', {
